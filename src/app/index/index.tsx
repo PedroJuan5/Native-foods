@@ -7,21 +7,21 @@ export default function Index() {
         {
             id: 1,
             name: "Big Tasty", // Faltando virgula
-            description:"Quatro Hamburgues (100% carne bovina), alface...",
+            description:"Três Hamburgues (100% carne bovina), alface,tomate, molho especial...",
             price: 42.90,
             image: require("@/assets/images/bk.png")
         },
         {
             id: 2,
             name: "Chicken Bacon Catupiry",
-            description:"Quatro Hamburgues (100% carne bovina), queijo...",
+            description:"Dois Hamburgues (100% carne bovina), queijo, onion",
             price: 39.90,
             image: require("@/assets/images/costela.png")
         },
         {
             id: 3,
             name: "Mc Chicken",
-            description:"Uma carne de Frango (100% carne De Frango), maionese...",
+            description:"Um pedaço de Frango (100% carne De Frango), maionese, alface...",
             price: 32.50,
             image: require("@/assets/images/chicken.png")
         }
@@ -31,8 +31,8 @@ export default function Index() {
         <View style={styles.container}>
             <View style={styles.header}>
                 <Image style={styles.headerImage} source={require("@/assets/images/header.png")}/>
-               <Text style={styles.restaurantName}>BK Donalds</Text>
-               <Text style={styles.subtitle}>O Mlehor que tem na Região!</Text>
+               <Text style={styles.restaurantName}>King BK Donalds</Text>
+               <Text style={styles.subtitle}>Os Melhores Lanches que você encontra na região!</Text>
            </View>
            
            <View style={styles.tabs}>
