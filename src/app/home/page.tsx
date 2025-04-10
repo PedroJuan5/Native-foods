@@ -1,5 +1,7 @@
 import { Image, ScrollView, StyleSheet, Text, Touchable, TouchableOpacity, View } from "react-native";
 import { styles } from "./style"
+import { Link } from "expo-router";
+
 
 
 export default function Index() {
@@ -46,6 +48,7 @@ export default function Index() {
             <ScrollView style= {styles.menuList}>
            {
             MENU.map((item) => (
+                <Link href= {"/home/page"} asChild>
                 <TouchableOpacity style= {styles.menuItem}>
             <View style={styles.menuContent}>
                 <Text style={styles.itemName}>{item.name}</Text>
@@ -54,6 +57,7 @@ export default function Index() {
                 </View>         
                 <Image style={styles.itemImage} source={item.image}></Image>
                 </TouchableOpacity>
+                </Link>
             ))
            }
            </ScrollView>
