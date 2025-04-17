@@ -48,7 +48,7 @@ export default function Index() {
             <ScrollView style= {styles.menuList}>
            {
             MENU.map((item) => (
-                <Link href= {"/home/page"} asChild>
+                <Link href= {"/produto/page"} asChild>
                 <TouchableOpacity style= {styles.menuItem}>
             <View style={styles.menuContent}>
                 <Text style={styles.itemName}>{item.name}</Text>

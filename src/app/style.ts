@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
-    backgroundColor: '#ffefd5', // coloquei um fundo com tom pastel remetendo à temática de lanches
+    backgroundColor: '#ffefd5', // coloquei um fundo com tom pastel que lembra a temática de lanches
   },
   title: {
     fontSize: 26,
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     marginBottom: 15,
     backgroundColor: '#fff',
-    elevation: 2, // Sombra leve nos campos
+    elevation: 2, 
   },
   button: {
     width: '90%',
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 8,
-    elevation: 3, // Sombra no botão
+    elevation: 3, 
   },
   buttonText: {
     color: '#fff',

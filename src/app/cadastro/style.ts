@@ -6,13 +6,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
-    backgroundColor: '#ffe5b4', // Fundo com tom quente que remete a lanches
+    backgroundColor: '#ffe5b4', 
   },
   title: {
     fontSize: 28,
     fontWeight: 'bold',
-    color: '#FF4500', // Cor vibrante para destacar o título
-    marginBottom: 10,
+    color: '#FF4500',
   },
   subtitle: {
     fontSize: 16,
@@ -24,12 +23,12 @@ const styles = StyleSheet.create({
     width: '90%',
     height: 50,
     borderWidth: 1,
-    borderColor: '#FF4500', // Combinação temática
+    borderColor: '#FF4500', 
     borderRadius: 8,
     paddingHorizontal: 15,
     marginBottom: 15,
     backgroundColor: '#fff',
-    elevation: 2, // Sombra leve nos campos
+    elevation: 2, 
   },
   button: {
     width: '90%',
@@ -38,7 +37,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 8,
-    elevation: 3, // Sombra no botão
+    elevation: 3, // Sombra no botao
   },
   buttonText: {
     color: '#fff',
