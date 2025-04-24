@@ -1,34 +1,31 @@
-import { Image, ScrollView, StyleSheet, Text, Touchable, TouchableOpacity, View } from "react-native";
+import { Image, ImageSourcePropType, ScrollView, StyleSheet, Text, Touchable, TouchableOpacity, View } from "react-native";
 import { styles } from "./style"
 import { Link } from "expo-router";
+import { useEffect, useState } from "react"
 
-
-
+export type ProdutoType = {
+    id: number,
+    name: string,
+    price: number,
+    description: string,
+    imgUrl: ImageSourcePropType,
+    ingredients: string,
+}
+ 
 export default function Index() {
-    const MENU = [
-        {
-            id: 1,
-            name: "Big Tasty", // Faltando virgula
-            description:"Três Hamburgues (100% carne bovina), alface,tomate, molho especial...",
-            price: 42.90,
-            image: require("@/assets/images/bk.png")
-        },
-        {
-            id: 2,
-            name: "Chicken Bacon Catupiry",
-            description:"Dois Hamburgues (100% carne bovina), queijo, onion",
-            price: 39.90,
-            image: require("@/assets/images/costela.png")
-        },
-        {
-            id: 3,
-            name: "Mc Chicken",
-            description:"Um pedaço de Frango (100% carne De Frango), maionese, alface...",
-            price: 32.50,
-            image: require("@/assets/images/chicken.png")
-        }
+ 
+    const [produtos, setProdutos] = useState<ProdutoType[]>()
+ 
+    function fetchProdutos(){
+        fetch("http://localhost:3000/produto")
+        .then((response) => response.json())
+        .then(data => setProdutos(data))
+    }
+ 
+    useEffect(() => {
+        fetchProdutos()
+    }, [])
 
-    ]
     return(
         <View style={styles.container}>
             <View style={styles.header}>
@@ -45,22 +42,22 @@ export default function Index() {
             ))}
            </View>
 
-            <ScrollView style= {styles.menuList}>
-           {
-            MENU.map((item) => (
-                <Link href= {"/produto/page"} asChild>
-                <TouchableOpacity style= {styles.menuItem}>
-            <View style={styles.menuContent}>
-                <Text style={styles.itemName}>{item.name}</Text>
-                <Text style={styles.itemDescription}>{item.description}</Text>
-                <Text style={styles.itemPrice}>{item.price.toFixed(2)}</Text>
-                </View>         
-                <Image style={styles.itemImage} source={item.image}></Image>
-                </TouchableOpacity>
-                </Link>
-            ))
-           }
-           </ScrollView>
+           <ScrollView>
+                {
+                    produtos?.map((item) => (
+                        <Link href={`/produto/${item.id}`} asChild key={item.id}>
+                            <TouchableOpacity style={styles.menuItem}>
+                                <View style={styles.menuContent}>
+                                    <Text style={styles.itemName}>{item.name}</Text>
+                                    <Text style={styles.itemDescription}>{item.description}</Text>
+                                    <Text style={styles.itemPrice}>R$ {item.price}</Text>
+                                </View>
+                                <Image style={styles.itemImage} source={item.imgUrl} />
+                            </TouchableOpacity>
+                        </Link>
+                    ))
+                }
+            </ScrollView>
         </View>
 
    )

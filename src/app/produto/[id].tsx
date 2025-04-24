@@ -8,6 +8,19 @@ const ProductDetailPage = () => {
     
   };
 
+  export default function ProductScreen() {
+    const { id } = useLocalSearchParams()
+    const [produto, setProduto] = useState<ProdutoType>()
+ 
+    function getProduto() {
+        fetch(`http://localhost:3000/produto/${id}`)
+        .then((res) => res.json())
+        .then(data => setProduto(data))
+    }
+ 
+    useEffect(() => {
+        getProduto()
+    })
   return (
     <View style={styles.container}>
       <Image style={styles.image} source={require("@/assets/images/bk.png")}></Image>
